@@ -9,7 +9,7 @@ import java.io.IOException;
 @Configuration
 public class AppConfig {
 
-    @Bean
+   @Bean
     public Calculator addLongMinus() {
         Calculator addLongMinus = new AddLongMinus();
         return addLongMinus;
@@ -30,7 +30,7 @@ public class AppConfig {
     @Bean
     public Body Body() {
         Body body = new Body();
-        body.addImplementsFunction("+Long", addLongMinus());
+        body.addImplementsFunction("-Long", addLongMinus());
         body.addImplementsFunction("+Int", addIntPlus());
         body.addImplementsFunction("-Int", addIntMinus());
 
