@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="Cheks" class="com.Spring.app.Cheks"/>
+    <bean id="AddLongMinus" class="com.Spring.app.AddLongMinus"/>
+    <bean id="AddIntPlus" class="task180416.AddIntPlus"/>
+    <bean id="AddIntMinus" class="task180416.AddIntMinus"/>
+
+    <bean id="StockAllImplementations" class="task180416.StockAllImplementations">
+        <property name="implementsFunctionMap">
+            <map>
+                <entry key="-Long" value-ref="AddLongMinus"/>
+                <entry key="+Int" value-ref="AddIntPlus"/>
+                <entry key="-Int" value-ref="AddIntMinus"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="ParseChar" class="task180416.ParseChar"/>
+    <bean id="InputWithConsole" class="task180416.InputWithConsole">
+        <property name="stockAllImplementations" ref="StockAllImplementations"/>
+    </bean>
+
+    <bean id="BodyCalculator" class="task180416.BodyCalculator">
+        <constructor-arg ref="InputWithConsole"/>
+        <property name="stockAllImplementations" ref="StockAllImplementations"/>
+        <property name="parseChar" ref="ParseChar"/>
+
+    </bean>
+
+</beans>

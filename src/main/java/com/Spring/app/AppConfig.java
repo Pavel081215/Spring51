@@ -6,10 +6,10 @@ import task180416.*;
 import java.io.IOException;
 
 
-@Configuration
+//@Configuration
 public class AppConfig {
 
-   @Bean
+/*   @Bean
     public Calculator addLongMinus() {
         Calculator addLongMinus = new AddLongMinus();
         return addLongMinus;
@@ -50,6 +50,6 @@ public class AppConfig {
         bodyCalculator.setImplementsFunctionMap(Body().getImplementsFunctionMap());
         return bodyCalculator;
     }
-
+*/
 
 }

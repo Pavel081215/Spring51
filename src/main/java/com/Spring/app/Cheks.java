@@ -2,6 +2,7 @@ package com.Spring.app;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import task180416.BodyCalculator;
 
 import java.io.IOException;
@@ -12,9 +13,9 @@ import java.io.IOException;
 public class Cheks {
 
     public static void main(String[] args) throws IOException {
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-Context.xml");
 
-        BodyCalculator bodyCalculator = applicationContext.getBean("bodyCalculator",BodyCalculator.class);
+        BodyCalculator bodyCalculator = applicationContext.getBean("BodyCalculator",BodyCalculator.class);
 
         bodyCalculator.solution();
 
