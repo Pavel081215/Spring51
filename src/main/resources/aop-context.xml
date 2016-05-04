@@ -8,14 +8,11 @@
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
 
- <!--   <bean id="logAspect" class="org.apache.log4j.Logger"/>
+   <bean id="logAspect" class="com.Spring.app.LogAspect"/>
     <aop:config>
-        <aop:pointcut id="executorExecutor" expression="execution( * com.Spring.ExecutorImpl.*(..))"/>
+        <aop:pointcut id="Calculator" expression="execution( * task180416.BodyCalculator.solution())"/>
         <aop:aspect  ref="logAspect">
-            <aop:around pointcut-ref="executorExecutor" method="onExecute"/>
+            <aop:around pointcut-ref="Calculator" method="onExecute"/>
         </aop:aspect>
-
-
-    </aop:config>-->
-
+    </aop:config>
 </beans>
