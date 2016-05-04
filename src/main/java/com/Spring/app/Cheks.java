@@ -13,7 +13,7 @@ import java.io.IOException;
 public class Cheks {
 
     public static void main(String[] args) throws IOException {
-        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-Context.xml");
+        ApplicationContext applicationContext = new ClassPathXmlApplicationContext("application-Context.xml","aop-context.xml");
 
         BodyCalculator bodyCalculator = applicationContext.getBean("BodyCalculator",BodyCalculator.class);
 
